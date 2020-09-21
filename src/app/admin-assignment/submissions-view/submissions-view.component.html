@@ -1,0 +1,58 @@
+<br>
+<mat-card class="column card-spacing">
+    <mat-card-title>
+        <span routerLink='/assignment'>
+            <mat-icon>navigate_before</mat-icon>
+            <span class="heading">Submissions</span>
+        </span>
+    </mat-card-title>
+    <mat-card-content>
+        <div fxLayout fxLayoutAlign="start center" class="spacing-top">
+            <span>
+                <span class="white-color">Subject:</span>&nbsp; 
+                <span class="font-style">{{ assignment.subject }}</span>
+            </span>
+            <span class="spacing">
+                <span class="white-color">class:</span>&nbsp; 
+                <span class="font-style">{{ assignment.class }}</span>
+            </span>
+            <span class="spacing">
+                <span class="white-color">topic:</span>&nbsp;
+                 <span class="font-style">{{ assignment.topic }}</span>
+            </span>
+        </div>
+        <div fxLayout fxLayoutAlign="start center" class="spacing-top">
+            <span>
+                <span class="white-color">Type:</span>&nbsp; 
+                <span class="font-style">{{ assignment.type }}</span></span>
+            <span class="spacing">
+                <span class="white-color">Date of assigning:</span>&nbsp; 
+                <span class="font-style">{{ assignment.dateOfAssigning }}</span>
+            </span>
+            <span class="spacing">
+                <span class="white-color">Deadline:</span>&nbsp; 
+                <span class="font-style">{{ assignment.deadline }}</span>
+            </span>
+            <span class="spacing">
+                <span class="white-color">remarks:</span>&nbsp; 
+                <span class="font-style">{{ assignment.remarks }}</span>
+            </span>
+        </div>
+        <div class="spacing-top">
+            <span>
+                <span class="white-color-filter-by">Filter by</span>
+            </span>
+        </div>
+        <app-submission-view-table 
+        [dataSource]="studentAssignment" 
+        [displayedColumns]="displayedColumns">
+        </app-submission-view-table>
+    </mat-card-content>
+</mat-card>
+
+
+
+
+
+
+

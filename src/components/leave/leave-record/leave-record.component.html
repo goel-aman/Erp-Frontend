@@ -1,0 +1,10 @@
+<mat-card class="mat-card-leave-record">
+    <mat-card-title class="leave-record-title">Leave record</mat-card-title>
+    <div *ngFor="let category of finalCategoryList">
+        <div fxLayout >
+            <span fxFlex="70" class="label">{{category.type_of_leave}}</span>
+            <span fxFlex="30" fxLayoutAlign="end center" class="value">{{category.count}}/{{category.total_leaves}} taken</span>
+        </div>
+        <mat-progress-bar [appProgressBarColor]="category.color" mode="determinate" [value]="category.percentage" class="progress-bar"></mat-progress-bar>
+    </div>
+</mat-card>

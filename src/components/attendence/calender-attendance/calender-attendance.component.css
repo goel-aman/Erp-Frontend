@@ -1,0 +1,37 @@
+.mat-calendar-header {
+  display: none;
+}
+
+.mat-calendar-body-cell-content {
+  font-weight: bold;
+}
+
+
+.mat-calendar-period-button {
+  margin-left: 100px !important;
+  pointer-events: none;
+}
+
+.mat-calendar-body-label {
+  display: none !important;
+}
+
+.mat-card {
+  width: 400px;
+  margin: 16px;
+}
+
+::ng-deep.absent-date .mat-calendar-body-cell-content {
+  background-color: #f7685b !important;
+  border-radius: 8px;
+}
+
+::ng-deep.holiday-date .mat-calendar-body-cell-content {
+  background-color: #8affc0 !important;
+  border-radius: 8px;
+}
+
+::ng-deep.late-date .mat-calendar-body-cell-content {
+  background-color: #ffd38b !important;
+  border-radius: 8px;
+}

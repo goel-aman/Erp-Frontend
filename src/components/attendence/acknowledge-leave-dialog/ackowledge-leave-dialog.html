@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>Acknowledge Leave</h1>
+<div fxLayout="column" fxLayoutAlign="space-between none" mat-dialog-content>
+  <div fxLayout fxLayoutAlign="space-between center" class="leave-info">
+    <div fxFlex="40">
+      {{data.attendance_date | date: 'MMMM d, y'}}, <span class="attendance-status">{{data.status}}</span>
+    </div>
+    <div fxFlex="30">
+      {{data.leave_type}}
+    </div>
+    <div fxFlex="30">
+      <button mat-flat-button
+              [ngClass]="{'acknowledge-status-positive': data.parent_acknowledged == 'Acknowledged' , 'acknowledge-status-negative': data.parent_acknowledged == 'Unacknowledged'}">
+              {{data.parent_acknowledged}}
+      </button>
+    </div>
+  </div>
+
+  <mat-form-field appearance="outline" class="example-full-width">
+    <mat-label>Please provide the reason for your ward's absence.</mat-label>
+    <textarea matInput [(ngModel)]="data.parent_remarks"></textarea>
+  </mat-form-field>
+
+  <div fxLayout fxLayoutAlign="start center">
+    <label for="medical-attachment">
+      <mat-icon class="icon-color">attach_file</mat-icon>
+      <span class="attachment-link">Click here to attach required document</span>
+    </label>
+    <input type="file" id="medical-attachment" accept="image/png, image/jpeg, .doc, .docx, .pdf">
+  </div>
+</div>
+<mat-dialog-actions align="center">
+  <button mat-button mat-dialog-close cdkFocusInitial>Cancel</button>
+  <button mat-raised-button [mat-dialog-close]="data">Acknowledge</button>
+</mat-dialog-actions>
+

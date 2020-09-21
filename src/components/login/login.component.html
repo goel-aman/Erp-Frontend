@@ -1,0 +1,30 @@
+<div fxLayout fxFlex="100" fxLayoutAlign="center">
+  <mat-card class="mat-card-login">
+    <form fxLayout="column" [formGroup]="loginForm" (ngSubmit)="loginForm.valid && onSubmit()">
+      <div class="login-page-card-heading" fxLayoutAlign="center">Login</div>
+      <br>
+      <div fxLayout="column">
+        <div fxLayoutAlign="center">
+          <mat-form-field appearance="outline" style="width: 228px;">
+            <input matInput type="text" placeholder="Registration Id" formControlName="username">
+            <mat-error *ngIf="loginFormHasError('username', 'required')">Registration Id is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div fxLayoutAlign="center">
+          <mat-form-field appearance="outline" style="width: 228px;">
+            <input matInput type="password" placeholder="Password" formControlName="password">
+            <mat-error *ngIf="loginFormHasError('password', 'required')">Password is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div  fxLayoutAlign="center">
+          <button mat-flat-button
+                  class="login-button"
+                  type="submit">LOGIN</button>
+        </div>
+        <div fxLayoutAlign="center">
+          <button  mat-flat-button class="forgot-password-button">Forgot Password?</button>
+        </div>
+      </div>
+    </form>
+  </mat-card>
+</div>

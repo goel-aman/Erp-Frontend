@@ -1,0 +1,29 @@
+.table-container {
+    height: 440px;
+    overflow: auto;
+  }
+  
+table {
+   width: 100%;
+   font-family: Poppins;
+   font-size: 10px;
+}
+.school-vacation-calender-title{
+    font-weight: 600;
+    font-family: Poppins;
+    font-size: 15px;
+}
+.mat-card-school-vacation-calender{
+    margin: 1%;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    font-family: Poppins;
+}
+.mat-cell{
+  border-bottom-style: none;
+  padding-left: 0px !important;
+}
+.mat-header-cell{
+  border-bottom-style: none;
+  padding-left: 0px !important;
+}

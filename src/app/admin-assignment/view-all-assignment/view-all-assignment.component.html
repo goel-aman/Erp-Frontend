@@ -1,0 +1,30 @@
+<br>
+<mat-card>
+    <mat-card-title>
+        <span routerLink="/assignment"  [queryParams]="{selectedIndex:2}">
+            <mat-icon>navigate_before</mat-icon>
+            <span class="heading">All assignments</span>
+        </span>
+    </mat-card-title>
+    <br>
+    <mat-card-content>
+        <div fxLayout fxLayoutAlign="start center"> 
+            <span>
+                <span class="font">Subject:</span>&nbsp;&nbsp;
+                <span class="text">{{ data.subject }}</span>
+            </span>
+            <span class="spacing-left">
+                <span class="font">Class:</span>&nbsp;&nbsp;
+                <span class="text">{{ data.classes}}</span>
+            </span>
+            <span class="spacing-left">
+                <span class="text">{{ data.unchecked }}</span> &nbsp; 
+                <span class="font">unchecked assignments</span>
+            </span>   
+        </div>
+        <br>
+        <span class="font-assignment">Assignments</span>
+        <br><br>
+        <app-assignment-table [dataSource]="dataSource" [displayedColumns]="displayedColumns"></app-assignment-table>
+    </mat-card-content>
+</mat-card> 

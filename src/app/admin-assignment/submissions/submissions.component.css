@@ -1,0 +1,86 @@
+/* Classes are in alphabetically sorted order */
+.card-spacing {
+    left: 1%;
+    position: relative;
+    width: 95%;
+}
+
+.card {
+    background: #FFFFFF;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+}
+
+.font {
+    color: #4C5862;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    opacity: 0.5;
+}
+
+.heading {
+    color: #192A3E;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+}
+
+.spacing-top {
+    margin-top: 2%;
+}
+
+.shadow-effect {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.14);
+    border-radius: 4px;
+    display: inline-block;
+    padding: 1% 1% 2% 1%;
+    width: 98%;
+}
+
+.text {
+    color: #4C5862;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+}
+
+table {
+    box-shadow: none;
+    width: 100%;
+}
+
+.view-assignment-button {
+    border: 1px solid #109CF1;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 10px rgba(16, 156, 241, 0.24);
+    border-radius: 4px;
+}
+
+.view-all-button {
+    color: #109CF1;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    text-align: center;
+}
+
+.yellow-button {
+    background-color: #f1c40f;
+    color: #fff;
+    line-height: 25px;
+    padding: 0% 13%;
+}

@@ -1,0 +1,130 @@
+<mat-card>
+  <div>
+    <!-- year -->
+    <mat-form-field fxFlex="18" fxLayoutAlign="start center">
+      <mat-label>Academic Year</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let year of academicYears" [value]="year">
+          {{ year - 1 }} - {{ year }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!-- attendance below -->
+    <mat-form-field fxFlex="16" fxLayoutAlign="start center">
+      <mat-label>Attendance Below</mat-label>
+      <input
+        matInput
+        placeholder="Attendance Below"
+        [(ngModel)]="attendanceBelow"
+      />
+    </mat-form-field>
+    <!-- class -->
+    <mat-form-field fxFlex="8" fxLayoutAlign="start center">
+      <mat-label>Class</mat-label>
+      <input matInput placeholder="Class" [(ngModel)]="class.standard" />
+    </mat-form-field>
+    <!-- section -->
+    <mat-form-field fxFlex="11" fxLayoutAlign="start center">
+      <mat-label>Section</mat-label>
+      <input matInput placeholder="Section" [(ngModel)]="class.section" />
+    </mat-form-field>
+  </div>
+  <div>
+    <!-- from date-->
+    <mat-form-field fxFlex="16" fxLayoutAlign="start center">
+      <mat-label>From</mat-label>
+      <input matInput [matDatepicker]="picker1" [(ngModel)]="fromDate" />
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    <!-- to date-->
+    <mat-form-field fxFlex="15" fxLayoutAlign="start center">
+      <mat-label>To</mat-label>
+      <input matInput [matDatepicker]="picker2" [(ngModel)]="toDate" />
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+    <!-- working days -->
+    <div fxFlex="15" fxLayoutAlign="start center">
+      <label>Workingdays: </label>{{ workingDays }}
+    </div>
+  </div>
+  <div>
+    <!-- enable student name -->
+    <mat-checkbox
+      fxFlex="15"
+      fxLayoutAlign="start center"
+      [(ngModel)]="enableStudentName"
+      >Enable Student Name</mat-checkbox
+    >
+    <!-- student name -->
+    <mat-form-field fxFlex="20" fxLayoutAlign="start center">
+      <mat-label class="label">Student Name</mat-label>
+      <input
+        matInput
+        placeholder="Enter student name"
+        [(ngModel)]="formStudentName"
+      />
+    </mat-form-field>
+    <button
+      mat-flat-button
+      class="submit-button"
+      (click)="submit()"
+      type="submit"
+    >
+      Submit
+    </button>
+  </div>
+</mat-card>
+<mat-card>
+  <div>
+    <h2 fxFlex="80" fxLayoutAlign="center">Attendance Report</h2>
+  </div>
+  <div>
+    <div fxFlex="80" fxLayoutAlign="center">
+      <ng-container
+        *ngIf="currentStudent == null; then classTemplate; else studentTemplate"
+      ></ng-container>
+      <ng-template #classTemplate>
+        <label>Class &nbsp;&nbsp;</label>{{ class.standard }}-{{
+          class.section
+        }}
+        &nbsp;&nbsp;
+        <label>Workingdays &nbsp;&nbsp;</label>{{ workingDays }}
+      </ng-template>
+
+      <ng-template #studentTemplate>
+        <ace-table
+          [dataSource]="currentStudent"
+          [mappings]="studentMappings"
+          [includeSrNo]="false"
+        >
+        </ace-table>
+      </ng-template>
+    </div>
+
+    <div fxFlex="20">
+      <button mat-flat-button class="submit-button" type="submit">
+        Download Report
+      </button>
+    </div>
+  </div>
+</mat-card>
+<ng-container *ngIf="enableStudentName; then reportWithName else report"></ng-container>
+<ng-template #report>
+  <ace-table
+    *ngIf="attendance != null && attendance.length > 0"
+    [dataSource]="attendance"
+    [mappings]="attendanceMappings"
+    [includeSrNo]="true"
+  ></ace-table
+></ng-template>
+<ng-template #reportWithName>
+  <ace-table
+    *ngIf="attendance != null && attendance.length > 0"
+    [dataSource]="attendance"
+    [mappings]="attendanceMappings"
+    [includeSrNo]="false"
+  >
+  </ace-table
+></ng-template>

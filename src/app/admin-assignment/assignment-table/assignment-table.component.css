@@ -1,0 +1,88 @@
+/* Classes are in alphabetically sorted order */
+
+.blue-color {
+    background: #109CF1;
+    box-shadow: 0px 4px 10px rgba(16, 156, 241, 0.24);
+    border-radius: 4px;
+    width: 70%;
+  }
+  
+  .font {
+    color: #4C5862;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+  }
+  
+  .green-button {
+    background: #2ED47A;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    padding: 0% 15%;
+    text-align: center;
+  }
+  
+  .heading {
+    color: #4C5862;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    opacity: 0.5;
+  }
+  
+  .left-spacing-submission {
+    margin-left: 20%;
+  }
+  
+  .no-boundary {
+    border: none;
+    color: #109CF1;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    text-align: center;
+  }
+  
+  table {
+    box-shadow: none;
+    width: 100%;
+  }
+  
+  .view-button {
+    color: #FFFFFF;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    text-align: center;
+  }
+  
+  .yellow-button {
+    background: #FFB946;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-align: center;
+  }

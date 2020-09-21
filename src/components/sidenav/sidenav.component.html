@@ -1,0 +1,90 @@
+<!-- <h1>hello from nav bar</h1> -->
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" class="sidenav" [(opened)]="valueFromHeader">
+    <div fxLayout="column" class="sidenav-info">
+      <div fxLayout="row" class="sidenav-user-info">
+        <div>
+          <img src="../../assets/img/student.png"
+            alt="avatar"
+            class="user-avatar" />
+        </div>
+        <div class="user-info">
+          <div class="username">Shivam Kapoor</div>
+          <div class="user-additional-info">4 - C</div>
+        </div>
+      </div>
+      <div class="sidenav-router">
+        <mat-list role="list">
+          <mat-nav-list class="sidenav-list">
+            <a mat-list-item routerLink="dashboard" routerLinkActive="active">
+              <mat-icon class="material-icons-outlined sidenav-router-icon">dashboard</mat-icon>
+              <span class="sidenav-router-link">Dashboard</span>
+            </a>
+            <a *ngIf="role != 'Teacher'" mat-list-item [routerLink]="['attendance', studentId]" routerLinkActive="active">
+              <mat-icon class="material-icons-outlined sidenav-router-icon">poll</mat-icon>
+              <span class="sidenav-router-link">Attendance</span>
+              <!-- <mat-nav-list class="sidenav-list">
+                <a
+                  mat-list-item
+                  routerLink="/attendance/student"
+                  routerLinkActive="active"
+                >
+
+
+                  <span class="sidenav-router-link">Student</span>
+                </a>
+                <a
+                  mat-list-item
+                  routerLink="/attendance/teacher"
+                  routerLinkActive="active"
+                >
+
+                  <span class="sidenav-router-link">Teacher</span>
+                </a>
+              </mat-nav-list> -->
+            </a>
+            <a *ngIf="role == 'Teacher'" mat-list-item routerLink="teacherattendance" routerLinkActive="active">
+              <mat-icon class="material-icons-outlined sidenav-router-icon">poll</mat-icon>
+              <span class="sidenav-router-link">Attendance</span></a>
+            <!-- <ng-template *ngIf="isAdmin"> -->
+            <a *ngIf="isAdmin" mat-list-item routerLink="assignment"
+              routerLinkActive="active">
+              <mat-icon class="material-icons-outlined sidenav-router-icon">poll</mat-icon>
+              <span class="sidenav-router-link">Assignment</span>
+            </a>
+
+            <a *ngIf="!isAdmin" mat-list-item routerLink="student-assignment"
+              routerLinkActive="active">
+              <mat-icon class="material-icons-outlined sidenav-router-icon">poll</mat-icon>
+              <span class="sidenav-router-link">Assignment</span>
+            </a>
+
+
+            <a *ngIf="role == 'Teacher'" mat-list-item routerLink="leave" routerLinkActive="active">
+              <mat-icon class="material-icons-outlined sidenav-router-icon">poll</mat-icon>
+              <span class="sidenav-router-link">Leave</span>
+            </a>
+
+          
+            <a mat-list-item routerLink="admin-student-attendance-dashboard-component"
+            routerLinkActive="active">
+            <mat-icon class="material-icons-outlined sidenav-router-icon">poll</mat-icon>
+            <span class="sidenav-router-link">STUDENT ATTENDANCE</span>
+          </a>
+
+            
+          </mat-nav-list>
+        </mat-list>
+      </div>
+    </div>
+  </mat-sidenav>
+  
+  <mat-sidenav-content class="sidenav-content">
+    <router-outlet></router-outlet>
+<!--     <router-outlet name="router1"></router-outlet> -->
+    <!-- <router-outlet name="router2"></router-outlet>
+    <router-outlet name="router3"></router-outlet> -->
+  </mat-sidenav-content>
+<!--     <router-outlet name="router2"></router-outlet>
+    <router-outlet name="router3"></router-outlet> -->
+</mat-sidenav-container>

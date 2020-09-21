@@ -1,0 +1,211 @@
+/* Classes are in alphabetically sorted order */
+
+.blue-color {
+    background: #109CF1;
+    box-shadow: 0px 4px 10px rgba(16, 156, 241, 0.24);
+    border-radius: 4px;
+    width: 70%;
+}
+
+.content {
+    color: #4C5862;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    opacity: 0.5;
+}
+
+.expandable-col-height {
+    height: 0;
+}
+
+.font-black {
+    color: #4C5862;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+}
+
+.filter-by {
+    color: #334D6E;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    opacity: 0.5;
+}
+
+.input-box-shadow {
+    background: #FFFFFF;
+    border: 0.4px solid #C4C4C4;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.14);
+    border-radius: 4px;
+    height: 42px;
+    margin-bottom: 2.5%;
+    padding: 0px 0px 0px 6px;
+    width: 193px;
+}
+
+.input-box-border {
+    border: none;
+    border-color: transparent;
+    box-shadow: none !important;
+    bottom: 10px;
+    left: 5px;
+    position: relative;
+    text-align: center;
+}
+
+.left-spacing {
+    margin-left: 8%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+mat-card {
+    margin-left: 3%;
+    width: 92%;
+}
+
+.position-align {
+    bottom: 7px;
+    position: relative;
+}
+
+.remarks {
+    border-bottom-style: none;
+}
+
+.spacing-left {
+    color: #707683;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    margin-left: 8%;
+}
+
+.subject {
+    color: #323C47;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+}
+
+.submission {
+    color: #192A3E;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+}
+
+.search-button {
+    border: 1px solid #109CF1;
+    border-radius: 4px;
+    color: #109CF1;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    height: 42px;
+    letter-spacing: 0.01em;
+    margin-left: 2%;
+    width: 12%;
+}
+
+table {
+    box-shadow: none;
+    width: 100%;
+}
+
+.topic {
+    color: #323C47;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+}
+
+
+.view-font {
+    color: #FFFFFF;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    text-align: center;
+}
+
+.white-color {
+    bottom: 6px;
+    color: #4C5862;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    opacity: 0.5;
+    position: relative;
+}
+
+.white-color-heading {
+    color: #334D6E;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    opacity: 0.5;
+}
+
+.white-color-content {
+    color: #707683;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+}
+
+.yellow-button {
+    background: #FFB946;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+}

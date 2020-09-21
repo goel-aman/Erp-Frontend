@@ -1,0 +1,84 @@
+/* to be used while integrating with backend */
+.leave-records-card {
+  color: #192A3E;
+  font-family: 'Poppins';
+  margin: 16px;
+  width: 640px;
+  max-height: 432px;
+  /* overflow-y: scroll; */
+}
+
+.attendance-status {
+  color: #90A0B7;
+  font-size: 12px;
+}
+
+.acknowledge-status-negative {
+  background: #F7685B;
+  color: #fff;
+  font-size: 12px;
+}
+
+.acknowledge-status-positive {
+  background: #2ED47A;
+  color: #fff;
+  font-size: 12px;
+}
+
+.leave-records-card {
+  background: #FFFFFF;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  color: #192A3E;
+  font-family: 'Poppins';
+  margin: 16px;
+  max-height: 432px;
+  overflow-y: scroll;
+  width: 98%;
+}
+
+.mat-card-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.mat-card-content {
+  font-family: Poppins;
+  font-size: 14px;
+}
+
+.mat-flat-button {
+  line-height: 28px;
+  width: 100%;
+}
+
+.mat-spinner {
+  margin-left: 35%;
+  margin-top: 20% !important;
+}
+
+.name {
+  color: #4C5862;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 19px;
+  letter-spacing: 0.01em;
+}
+
+.shadow-effect {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.14);
+  border-radius: 4px;
+}
+
+.status {
+  color: #90A0B7;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.01em;
+}

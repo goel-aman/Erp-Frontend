@@ -1,0 +1,144 @@
+<mat-card>
+  <div>
+    <!-- year -->
+    <mat-form-field fxFlex="15" fxLayoutAlign="start center">
+      <mat-label>Academic Year</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let year of academicYears" [value]="selectedYear">
+          {{ year - 1 }} - {{ year }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!-- attendance below
+    <mat-form-field fxFlex="15" fxLayoutAlign="start center">
+      <mat-label>Attendance Below</mat-label>
+      <input
+        matInput
+        placeholder="Attendance Below"
+        [(ngModel)]="attendanceBelow"
+      />
+    </mat-form-field>
+    <!-- class
+    <mat-form-field fxFlex="15" fxLayoutAlign="start center">
+      <mat-label>Class</mat-label>
+      <input matInput placeholder="Class" [(ngModel)]="class.standard" />
+    </mat-form-field>
+    <!-- section
+    <mat-form-field fxFlex="15" fxLayoutAlign="start center">
+      <mat-label>Section</mat-label>
+      <input matInput placeholder="Section" [(ngModel)]="class.section" />
+    </mat-form-field> -->
+  </div>
+  <div>
+    <!-- from date-->
+    <mat-form-field fxFlex="15" fxLayoutAlign="start center">
+      <mat-label>From</mat-label>
+      <input matInput [matDatepicker]="picker1" [(ngModel)]="fromDate" />
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    <!-- to date-->
+    <mat-form-field fxFlex="15" fxLayoutAlign="start center">
+      <mat-label>To</mat-label>
+      <input matInput [matDatepicker]="picker2" [(ngModel)]="toDate" />
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+    <!-- working days -->
+    <div fxFlex="15" fxLayoutAlign="start center">
+      <label>Workingdays: </label>{{ workingDays }}
+    </div>
+  </div>
+  <div>
+    <!-- enable teacher name -->
+    <mat-checkbox
+      fxFlex="15"
+      fxLayoutAlign="start center"
+      [(ngModel)]="enableTeacherName"
+      >Enable Teacher Name</mat-checkbox
+    >
+    <!-- teacher name -->
+    <mat-form-field fxFlex="15" fxLayoutAlign="start center">
+      <mat-label class="label">Teacher Name</mat-label>
+      <input
+        matInput
+        placeholder="Enter teacher name"
+        [(ngModel)]="formTeacherName"
+      />
+    </mat-form-field>
+    <button
+      mat-flat-button
+      class="submit-button"
+      (click)="submit()"
+      type="submit"
+    >
+      Submit
+    </button>
+  </div>
+</mat-card>
+<mat-card>
+  <div>
+    <h2 fxFlex="80" fxLayoutAlign="center">Attendance Report</h2>
+  </div>
+  <div>
+    <div fxFlex="80" fxLayoutAlign="center">
+      <!-- <ng-container
+        *ngIf="currentTeacher == null; then classTemplate; else teacherTemplate"
+      ></ng-container>
+      <ng-template #classTemplate>
+        <label>Class: </label>{{ class.standard }}-{{ class.section }}
+        &nbsp;&nbsp;
+        <label>Workingdays: </label>{{ workingDays }}
+      </ng-template>
+
+      <ng-template #teacherTemplate>
+        <ace-table
+          [dataSource]="currentTeacher"
+          [mappings]="teacherMappings"
+          [includeSrNo]="false"
+        >
+        </ace-table>
+      </ng-template> -->
+    </div>
+
+    <div fxFlex="20">
+      <button mat-flat-button class="submit-button" type="submit">
+        Download Report
+      </button>
+    </div>
+  </div>
+</mat-card>
+<!-- <ace-table *ngIf="attendance!=null&&attendance.length>0"
+  [dataSource]="attendance"
+  [mappings]="attendanceMappings"
+  [includeSrNo]="includeSrNo"
+>
+</ace-table> -->
+<ng-container
+  *ngIf="enableTeacherName; then teacherNameReport; else normalReport"
+>
+</ng-container>
+<ng-template #normalReport
+  ><ace-table
+    *ngIf="
+      attendanceReportWithoutTeacher != null &&
+      attendanceReportWithoutTeacher.length > 0
+    "
+    [dataSource]="attendanceReportWithoutTeacher"
+    [mappings]="attendanceMappingsWithoutTeacher"
+    [includeSrNo]="true"
+  >
+  </ace-table>
+</ng-template>
+<ng-template #teacherNameReport>
+  <ace-table
+    *ngIf="
+      attendanceReportWithTeacher != null &&
+      attendanceReportWithTeacher.length > 0
+    "
+    [dataSource]="attendanceReportWithTeacher"
+    [mappings]="attendanceMappingsWithTeacher"
+    [includeSrNo]="false"
+  >
+  </ace-table>
+</ng-template>

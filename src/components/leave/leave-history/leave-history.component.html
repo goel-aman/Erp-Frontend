@@ -1,0 +1,23 @@
+<mat-card class="mat-card-leave-history">
+    <mat-card-title class="leave-history-title">Leave history</mat-card-title>
+    <mat-divider style="position: relative;"></mat-divider>
+    <div class="table-container">
+        <table mat-table [dataSource]="dataSource">
+      
+          <!-- Date Column -->
+          <ng-container matColumnDef="attendance_date">
+            <th mat-header-cell *matHeaderCellDef> Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.attendance_date}} </td>
+          </ng-container>
+      
+          <!-- Leave Type Column -->
+          <ng-container matColumnDef="type_of_leave">
+            <th mat-header-cell *matHeaderCellDef> Leave Type </th>
+            <td mat-cell *matCellDef="let element"> {{element.type_of_leave}} </td>
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+</mat-card>

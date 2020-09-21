@@ -1,0 +1,36 @@
+.table-container {
+    height: 247px;
+    overflow: auto;
+  }
+  
+table {
+   width: 100%;
+   font-family: Poppins;
+   font-size: 10px;
+}
+.mat-card-leave-history{
+    margin: 2%;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    font-family: Poppins;
+    /* box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2),
+                0px 0px 0px 0px rgba(0, 0, 0, 0.14), 
+                0px 0px 0px 0px rgba(0, 0, 0, 0.12) */
+}
+.leave-history-title{
+    font-weight: 600;
+    font-family: Poppins;
+    font-size: 15px;
+}
+.mat-cell{
+  border-bottom-style: none;
+}
+.mat-header-cell{
+  border-bottom-style: none;
+}
+.mat-cell{
+  padding-left: 0px !important;
+}
+.mat-header-cell{
+  padding-left: 0px !important;
+}

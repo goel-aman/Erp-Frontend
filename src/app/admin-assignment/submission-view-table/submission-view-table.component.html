@@ -1,0 +1,86 @@
+<div class="spacing-top">
+  <div class="input-box-shadow">
+    <mat-label><span class="white-color position-status">Status</span></mat-label>
+    <mat-form-field>
+      <mat-select class="input-box-border" #select
+        (selectionChange)="applyFilter($event)">
+        <mat-option *ngFor="let check of status" [value]="check.value">
+          {{check.value}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <button mat-stroked-button class="search-button">Search</button>
+  <br><br>
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="adminNo">
+    <th mat-header-cell *matHeaderCellDef>
+      <span class="table-heading">Adm no</span>
+    </th>
+    <td mat-cell *matCellDef="let student">
+      <span class="table-content">{{student.adminNo}} </span>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="studentName">
+    <th mat-header-cell *matHeaderCellDef>
+      <span class="table-heading">Student name</span>
+    </th>
+    <td mat-cell *matCellDef="let student">
+      <span class="student-name">{{student.studentName}}</span>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="dateOfSubmission">
+    <th mat-header-cell *matHeaderCellDef>
+      <span class="table-heading">Date of submission</span>
+    </th>
+    <td mat-cell *matCellDef="let student">
+      <span class="table-content">{{student.dateOfSubmission}} </span> 
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef>
+      <span class="table-heading">Status</span>
+    </th>
+    <td mat-cell *matCellDef="let student">
+      <button 
+        mat-flat-button 
+        height="10"
+        [ngClass]="(student.status=='unchecked')?'yellow-button':'green-button'">{{student.status}}
+      </button>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="marks">
+    <th mat-header-cell *matHeaderCellDef><span class="table-heading">Marks</span></th>
+    <td mat-cell *matCellDef="let student">
+      <span class="student-name-style">{{student.marks}}</span>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="percentage">
+    <th mat-header-cell *matHeaderCellDef><span class="table-heading">Percentage</span></th>
+    <td mat-cell *matCellDef="let student">
+      <span class="table-content">{{student.percentage}}%</span> </td>
+  </ng-container>
+
+  <ng-container matColumnDef="open">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let student"><button mat-raised-button
+        class="open-button blue-color"><span class="open-font">Open</span></button></td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  <tr class="mat-row" *matNoDataRow>
+    <td class="mat-cell" colspan="4">No data matching the filter
+      "{{select.value}}"</td>
+  </tr>
+
+</table>

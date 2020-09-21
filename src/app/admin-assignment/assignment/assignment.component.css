@@ -1,0 +1,282 @@
+.align-class {
+    margin-right: 60%;
+}
+
+.aligning-deadline-div {
+    position: relative;
+    top: 8px;
+}
+
+.aligning-deadline-label {
+    bottom: 6px;
+    position: relative;
+}
+
+.cancel-button {
+    border: none;
+    color: #109CF1;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    text-align: center;
+}
+
+
+.card-left-spacing {
+    margin-left: 10px;
+}
+
+#class-label {
+    width: 50px;
+}
+
+.calendar-icon-color {
+    color: #109CF1;
+}
+
+.card-shadow {
+    background: #FFFFFF;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+}
+
+.card-width {
+    width: 88%;
+}
+
+.deadline-position {
+    bottom: 6px;
+    position: relative;
+    width: 150px;
+}
+
+.div-height {
+    height: 42px;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    color: #109CF1;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    outline: none;
+    text-align: center;
+}
+
+.font-white {
+    color: #4C5862;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    opacity: 0.5;
+}
+
+.file-upload-alignment {
+    display: inline-block;
+    position: absolute;
+    padding-left: 4px;
+    padding-top: 16px;
+}
+
+.file-upload>input {
+    display: none;
+}
+
+.heading {
+    color: #192A3E;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+}
+
+.heading-active-assignment {
+    color: #192A3E;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+}
+
+.input-box-shadow {
+    border-radius: 4px;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.14);
+    border: 0.4px solid #C4C4C4;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    display: inline-block;
+    margin-bottom: 2.5%;
+    padding: 0px 0px 0px 6px;
+}
+
+.input-box-height {
+    height: 36px;
+}
+
+.input-box-font {
+    color: #4C5862;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    opacity: 0.5;
+}
+
+.input-box-border {
+    border: none;
+    border-color: transparent;
+    box-shadow: none !important;
+    text-align: center;
+}
+
+
+
+#marks-label {
+    width: 72px;
+}
+
+mat-icon, .color-link {
+    color: #109CF1;
+}
+
+mat-card {
+    width: 93%;
+}
+
+.mat-group {
+    background: #FFFFFF;
+}
+
+.normal-font {
+    color: #4C5862;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+}
+
+.remarksx {
+    width: 97%;
+}
+
+.remark-input {
+    width:550px;
+}
+
+.shadow-effect {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.14);
+    border-radius: 4px;
+    display: inline-block;
+    padding: 8px 8px 8px 8px;
+    width: 97%;
+}
+
+.subject {
+    width:227px;
+}
+
+.sub-card-width {
+    width: 94%;
+}
+
+.spacing-top {
+    margin-top: 16px;
+}
+
+.spacing-top-active-assignment {
+    margin-top: 12px;
+}
+
+.spacing-left {
+    margin-left: 2%;
+}
+
+#section-label {
+    width: 100px;
+}
+
+.top-alignment {
+    position: absolute;
+    top: 20px;
+}
+
+.tab-content {
+    background: #E5E5E5;
+}
+
+.type-div {
+    height: 42px;
+    width: 227px;
+}
+
+.type-label {
+    position: relative;
+    bottom: 6px;
+}
+
+.topic {
+    width:258px;
+}
+
+.upload-button {
+    background: #109CF1;
+    box-shadow: 0px 4px 10px rgba(16, 156, 241, 0.24);
+    border-radius: 4px;
+    color: #FFFFFF;
+    height: 56px;
+    width: 232px;
+}
+
+.upload-button-text {
+    align-items: center;
+    color: #FFFFFF;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.01em;
+    text-align: center;
+}
+
+.view-button {
+    background: #109CF1;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    position: relative;
+    text-align: center;
+    width: 100px;
+}
+
+*:focus {
+    outline: none;
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+}

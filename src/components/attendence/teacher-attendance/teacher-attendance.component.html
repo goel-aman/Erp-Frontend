@@ -1,0 +1,20 @@
+<mat-tab-group class="tab-header">
+    <mat-tab label="Attendance Dashboard">
+      <div fxLayout="column" fxLayoutAlign="space-between" class="tab-content">
+        <div fxLayout fxLayoutAlign="start">
+          <app-pie-attendance></app-pie-attendance>
+          <app-class-attendance></app-class-attendance>
+        </div>
+        <div fxLayout fxLayoutAlign="start">
+          <div fxLayout="column">
+            <app-student-with-low-attendance></app-student-with-low-attendance>
+            <app-check-student-attendance></app-check-student-attendance>
+          </div>
+          <leave-record class="leave-record-teacher-login"></leave-record>
+        </div>
+      </div>
+    </mat-tab>
+  
+    <mat-tab label="Upload Attendance"> </mat-tab>
+  </mat-tab-group>
+  

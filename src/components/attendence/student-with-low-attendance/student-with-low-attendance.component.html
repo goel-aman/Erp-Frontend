@@ -1,0 +1,83 @@
+<mat-card class="mat-card-student-low-attendance">
+  <mat-card-title class="student-low-attendance-title">Students with low
+    attendance</mat-card-title>
+  <mat-divider style="position: relative;"></mat-divider>
+  <div class="table-container-student-low-attendance">
+    <mat-spinner *ngIf="!dataSource.length" [diameter]="60"></mat-spinner>
+    <div *ngIf="dataSource.length">
+      <table mat-table [dataSource]="dataSource">
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef><span class="table-heading">
+              Name </span></th>
+          <td mat-cell *matCellDef="let element"><span class="student-name">{{element.student_name}}</span>
+          </td>
+        </ng-container>
+
+        <!-- Attendance Column -->
+        <ng-container matColumnDef="attendance">
+          <th mat-header-cell *matHeaderCellDef><span class="table-heading">
+              Attendance </span></th>
+          <td mat-cell *matCellDef="let element"><span
+              class="attendance-percent">{{element.percent}}%</span></td>
+        </ng-container>
+
+        <!-- Unacknowledged leave Column -->
+        <ng-container matColumnDef="unacknowledgedLeave">
+          <th mat-header-cell *matHeaderCellDef><span class="table-heading">
+              unacknowledged leave </span></th>
+          <td mat-cell *matCellDef="let element"><span class="light-font">{{element.unacknowledged}}</span>
+          </td>
+        </ng-container>
+
+        <!-- Parent's no. Column -->
+        <div *ngIf="user.role == 'teacher'">
+          <ng-container matColumnDef="parentsNumber">
+            <th mat-header-cell *matHeaderCellDef> <span class="table-heading">
+                Parent's no. </span></th>
+            <td mat-cell *matCellDef="let element"> {{element.parent_mobile}}
+            </td>
+          </ng-container>
+        </div>
+        <div *ngIf="user.role == 'Admin'">
+          <ng-container matColumnDef="class">
+            <th mat-header-cell *matHeaderCellDef><span class="table-heading">Class</span></th>
+            <td mat-cell *matCellDef="let element"><span class="light-font">{{element.class_name}}</span>
+            </td>
+          </ng-container>
+
+          <!--
+        <table mat-table [dataSource]="dataSource">
+          
+          <ng-container matColumnDef="student_name">
+            <th mat-header-cell *matHeaderCellDef > Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.student_name}} </td>
+          </ng-container>
+      
+          <ng-container matColumnDef="percent">
+            <th mat-header-cell *matHeaderCellDef> Attendance </th>
+            <td mat-cell *matCellDef="let element"> {{element.percent}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="unacknowledged">
+            <th mat-header-cell *matHeaderCellDef> Unacknowledged leave </th>
+            <td mat-cell *matCellDef="let element"> {{element.unacknowledged}} </td>
+          </ng-container>
+      
+          <ng-container matColumnDef="parent_mobile">
+            <th mat-header-cell *matHeaderCellDef> Parent's no. </th>
+            <td mat-cell *matCellDef="let element"> {{element.parent_mobile}} </td>
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true;"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        </div> -->
+        </div>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true;"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+</mat-card>

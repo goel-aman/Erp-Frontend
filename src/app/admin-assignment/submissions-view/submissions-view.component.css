@@ -1,0 +1,69 @@
+/* Classes are in alphabetically sorted order */
+.card-spacing {
+    background: #FFFFFF;
+    border-radius: 4px;
+    left: 3%;
+    position: relative;
+    width: 90%;
+}
+
+.font-style {
+    color: #4C5862;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+}
+
+.heading {
+    bottom: 7px;
+    color: #192A3E;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 1000;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    position: relative;
+}
+
+.position-status {
+    position: relative;
+    top: 8px;
+}
+
+.spacing {
+    margin-left: 10%;
+}
+
+.spacing-top {
+    margin-top: 2%;
+}
+
+.white-color {
+    color: #334D6E;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    opacity: 0.5;
+}
+
+.white-color-filter-by {
+    color: #334D6E;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    opacity: 0.5;
+}
+
+*:focus {
+    outline: none;
+}

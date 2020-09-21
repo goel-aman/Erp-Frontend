@@ -1,0 +1,158 @@
+<mat-card *ngIf="!showingReport">
+  <mat-card-title>
+    Assignment report
+  </mat-card-title>
+  <mat-card-subtitle>filter by</mat-card-subtitle>
+  <mat-card-content>
+    <div>
+      <!-- Academic Year -->
+      <mat-form-field fxFlex="21" fxLayoutAlign="start center">
+        <mat-label>Academic Year</mat-label>
+        <mat-select [value]="selectedYear">
+          <mat-option *ngFor="let year of academicYears" [value]="year">
+            {{ year - 1 }} - {{ year }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <!-- Subject -->
+      <mat-form-field fxFlex="15" fxLayoutAlign="start center">
+        <mat-label>Subject</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let subject of subjects" [value]="subject">
+            {{ subject }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <!-- Class -->
+      <mat-form-field fxFlex="8" fxLayoutAlign="start center">
+        <mat-label>Class</mat-label>
+        <input matInput placeholder="Section" [(ngModel)]="class.standard" />
+      </mat-form-field>
+      <!-- Section -->
+      <mat-form-field fxFlex="11" fxLayoutAlign="start center">
+        <mat-label>Section</mat-label>
+        <input matInput placeholder="Section" [(ngModel)]="class.section" />
+      </mat-form-field>
+      <!-- Month -->
+      <mat-form-field fxFlex="12" fxLayoutAlign="start center">
+        <mat-label>Month</mat-label>
+        <mat-select [value]="selectedMonth">
+          <mat-option *ngFor="let month of months" [value]="month">
+            {{ month }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <!-- Uploaded By -->
+      <mat-form-field fxFlex="20" fxLayoutAlign="start center">
+        <mat-label>Uploaded By</mat-label>
+        <input matInput placeholder="Uploaded By" [(ngModel)]="uploadedBy" />
+      </mat-form-field>
+      <div fxFlex="3"></div>
+
+      <button mat-stroked-button color="primary">Search</button>
+    </div>
+    <div>
+      Class:
+      <span *ngFor="let class of classes"
+        ><label>{{ class.standard }} - {{ class.section }} </label></span
+      >
+    </div>
+    <br />
+    <div>
+      <!-- Assignment Report Table -->
+      <div fxFlex="40">
+        <table class="assignment-report-table">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>No. of Assignments</th>
+              <th>Active</th>
+              <th>Status</th>
+              <th>Pending Submission</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let subjectReport of subjectReports">
+              <td>{{ subjectReport.subject }}</td>
+              <td>{{ subjectReport.noOfAssignments }}</td>
+              <td>{{ subjectReport.active }}</td>
+              <td>
+                <span class="report-status {{ subjectReport.status }}">{{
+                  subjectReport.status
+                }}</span>
+              </td>
+              <td>{{ subjectReport.pendingSubmissions }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div fxFlex="3"></div>
+      <span style="height: 50px;">
+        <button mat-stroked-button color="primary">
+          Download Report
+        </button></span
+      >
+    </div>
+    <div>
+      <button
+        mat-stroked-button
+        color="primary"
+        (click)="openReport(topicReports[0])"
+      >
+        Open First Report
+      </button>
+      <ace-table
+        [dataSource]="topicReports"
+        [mappings]="topicReportsMappings"
+      ></ace-table>
+    </div>
+  </mat-card-content>
+</mat-card>
+<mat-card *ngIf="showingReport">
+  <mat-card-title>
+    Assignment
+  </mat-card-title>
+  <mat-card-content>
+    <br />
+    <br />
+    <div>
+      <div fxFlex="10"><label>Subject: </label> {{ activeReport.subject }}</div>
+      <div fxFlex="12"><label>Topic: </label>{{ activeReport.topic }}</div>
+      <div fxFlex="7">
+        <label>Class: </label>{{ activeReport.class.standard }}-{{
+          activeReport.class.section
+        }}
+      </div>
+      <div fxFlex="20">
+        <label>Assigned By: </label>{{ activeReport.assignedBy.firstName }}
+      </div>
+    </div>
+    <div>
+      <div fxFlex="10"><label>Type: </label>{{ activeReport.type }}</div>
+      <div fxFlex="15">
+        <label>Date Of Assigning: </label
+        >{{ activeReport.from | date: "mediumDate" }}
+      </div>
+      <div fxFlex="10">
+        <label>DeadLine: </label>{{ activeReport.to | date: "mediumDate" }}
+      </div>
+    </div>
+    <div><label>Remarks: </label>{{ activeReport.remarks }}</div>
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div>
+      <ace-table
+        fxFlex="60"
+        [dataSource]="assignmentReport"
+        [mappings]="assignmentReportsMappings"
+      ></ace-table>
+    </div>
+  </mat-card-content>
+</mat-card>

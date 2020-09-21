@@ -1,0 +1,44 @@
+.icon-color{
+  color: #109cf1;
+}
+
+.attachment-link{
+  font-size: 12px;
+  color: #109cf1;
+  margin-bottom: 0px;
+  vertical-align: super;
+}
+
+.acknowledge-status-negative {
+  background: #F7685B;
+  color: #fff;
+  font-size: 12px;
+}
+
+.acknowledge-status-positive {
+  background: #2ED47A;
+  color: #fff;
+  font-size: 12px;
+}
+
+.mat-raised-button {
+  background-color: #109cf1;
+  color: #fff;
+}
+
+.mat-dialog-title {
+  font-family: 'Poppins';
+}
+
+.mat-dialog-content {
+  font-family: 'Poppins';
+}
+
+#medical-attachment {
+  height: 0;
+  width: 0;
+}
+
+.leave-info {
+  margin-bottom: 20px;
+}

@@ -1,0 +1,17 @@
+<mat-card class="card-shadow">
+  <mat-card-title>Attendance</mat-card-title>
+     <!-- <p style="margin-right: 18px;font-weight: bold;"> </p> -->
+  <mat-card-content>
+    <!-- <mat-spinner *ngIf="!doughnutChartData.length" [diameter]="60"></mat-spinner> -->
+    <ng-container *ngIf="doughnutChartData.length">
+      <canvas #mycanvas baseChart
+              class="circle"
+              [data]="doughnutChartData"
+              [labels]="doughnutChartLabels"
+              [chartType]="doughnutChartType"
+              [options]="doughnutOptions"
+              [colors]="doughnutChartColors">
+      </canvas>
+    </ng-container>
+  </mat-card-content>
+</mat-card>

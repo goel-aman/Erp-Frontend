@@ -1,0 +1,45 @@
+<mat-card >
+  <div>
+    <mat-form-field fxFlexAlign="start" fxFlex="15">
+      <mat-label>Date:</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="date" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker
+    ></mat-form-field>
+  </div>
+
+  <div>
+    <div fxFlexAlign="start" >
+      <!-- enable teacher name -->
+      <mat-checkbox
+        fxFlex="15"
+        fxLayoutAlign="start center"
+        [(ngModel)]="enableTeacherName"
+        >Enable Student Name</mat-checkbox
+      >
+      <!-- teacher name -->
+      <mat-form-field fxFlex="20" fxLayoutAlign="start center">
+        <mat-label class="label">Teacher Name</mat-label>
+        <input
+          matInput
+          placeholder="Enter teacher name"
+          [(ngModel)]="formTeacherName"
+        />
+      </mat-form-field>
+      <button
+        class="submit-button"
+        mat-flat-button
+        color="primary"
+        (click)="submit()"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</mat-card>
+
+<div fxFlexAlign="100" *ngIf="showTable">
+  <app-teacher-attendance-mark-table
+    [displayMode]="'admin'"
+  ></app-teacher-attendance-mark-table>
+</div>

@@ -1,0 +1,74 @@
+<table mat-table [dataSource]="attendances">
+  <ng-container matColumnDef="SrNo">
+    <th mat-header-cell *matHeaderCellDef>Sr. No.</th>
+    <td mat-cell *matCellDef="let attendance; let i = index">{{ i + 1 }}</td>
+  </ng-container>
+  <ng-container matColumnDef="Id">
+    <th mat-header-cell *matHeaderCellDef>Id No.</th>
+    <td mat-cell *matCellDef="let attendance; let i = index">
+      {{ attendance.emp_id }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="Name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let attendance; let i = index">
+      {{ attendance.name }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="ContactNumber">
+    <th mat-header-cell *matHeaderCellDef>Contact Number</th>
+    <td mat-cell *matCellDef="let attendance; let i = index">
+      {{ attendance.mobile }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="ApprovalStatus">
+    <th mat-header-cell *matHeaderCellDef>Approval Status</th>
+    <td mat-cell *matCellDef="let attendance; let i = index">
+      {{ attendance.approval_status }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="AttStatus">
+    <th mat-header-cell *matHeaderCellDef>Attendance</th>
+    <td mat-cell *matCellDef="let attendance; let i = index">
+      <span
+        class="attendance-status status-{{ attendance.attendance_status }}"
+        (click)="toggleAttendance(attendance)"
+      >
+        {{ attendance.attendance_status }}
+      </span>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="Remarks">
+    <th mat-header-cell *matHeaderCellDef>Remarks</th>
+    <td mat-cell *matCellDef="let attendance; let i = index">
+      <mat-form-field>
+        <input
+          matInput
+          [disabled]="attendance.attendance_status != 'L'"
+          type="text"
+          [(ngModel)]="attendance.remarks"
+        />
+      </mat-form-field>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+  <tr
+    mat-row
+    *matRowDef="let row; columns: displayedColumns; let i = index"
+  ></tr>
+  <tr></tr>
+</table>
+<mat-card> &nbsp;</mat-card>
+
+<mat-card class="attendance-table-actions">
+  <a mat-button color="primary" routerLink="/">Cancel</a>
+  <button
+    class="submit-button"
+    mat-flat-button
+    color="primary"
+    (click)="updateAttendance()"
+  >
+    Upload Attendance
+  </button>
+</mat-card>

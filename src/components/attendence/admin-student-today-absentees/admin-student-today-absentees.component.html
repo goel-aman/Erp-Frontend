@@ -1,0 +1,43 @@
+<br>
+<mat-card fxLayout="column" class="card">
+    <mat-card-title class="title">Today's absentees</mat-card-title>
+    <mat-card-content>
+        <mat-radio-group [ngModel]="OnChange()"
+            aria-labelledby="example-radio-group-label"
+            class="example-radio-group"
+            [(ngModel)]="status">
+            <mat-radio-button 
+                class="example-radio-button" 
+                *ngFor="let statuss of status_value" 
+                [value]="statuss">
+               <span class="font"> {{statuss}}</span>
+            </mat-radio-button>
+        </mat-radio-group>
+    </mat-card-content>
+    <mat-card-content [style.overflow]="'auto'" [style.height.px]="height">
+        <br>
+        <mat-card *ngFor="let absentee of absenteess" class="shadow-effect">
+            <mat-card-content>
+                <div fxLayout fxLayoutAlign="space-between center">
+                    <span class="font">{{ absentee.student_name}}({{absentee.roll_no}})</span>
+                    <span class="right-spacing">
+                        <span class="font-class">Class:</span>
+                        <span class="font">{{ absentee.class_name }}</span>
+                    </span>
+                    <span class="absent">{{ mapping_status[absentee.status] }}</span>
+                </div>
+                <div fxLayout fxLayoutAlign="space-between center" class="spacing-top">
+                    <span class="guardian">Guardian {{ absentee.parent_notified}}</span>
+                    <span>
+                        <button
+                            mat-raised-button
+                            [ngClass]="{ 'acknowledged' : absentee.parent_acknowledged == 'acknowledged',
+                            'unacknowledged': absentee.parent_acknowledged == 'Unacknowledged' }">
+                            <span class="button-absentee">{{ absentee.parent_acknowledged }}</span>
+                        </button>
+                    </span>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </mat-card-content>
+</mat-card>

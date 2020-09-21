@@ -1,0 +1,76 @@
+.sidenav-container {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 48px;
+}
+
+.sidenav {
+    width: 15%;
+    text-align: center;
+    box-shadow: 0px 4px 1px -1px rgba(0, 0, 0, 0.2),
+              0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+              0px 1px 3px 0px rgba(0, 0, 0, 0.12)
+}
+
+.example-events {
+  width: 300px;
+  height: 200px;
+  overflow: auto;
+  border: 1px solid #555;
+}
+
+.mat-nav-list a.active {
+    font-weight: bold;
+}
+
+.sidenav-content {
+  background-color: #E5E5E5;
+}
+
+.user-avatar {
+  border-radius: 50%;
+  width: 48px;
+}
+
+.sidenav-info {
+  margin: 16px 0 0 16px;
+}
+
+.user-info {
+  margin: 8px;
+  text-align: left;
+}
+
+.username {
+  font-weight: 500;
+}
+
+.user-additional-info {
+  font-size: 12px;
+  color: #90A0B7;
+}
+
+.sidenav-router-link {
+  color: #334D6E;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.sidenav-router-icon {
+  color: #C2CFE0;
+  font-size: 20px;
+}
+/*
+.mat-list-item {
+  padding: 0 8px !important;
+} */
+.mat-nav-list .mat-nav-list {
+  width: 90%;
+  margin: auto;
+  position: absolute;
+  top: 100%;
+  margin-left: 20px;
+}

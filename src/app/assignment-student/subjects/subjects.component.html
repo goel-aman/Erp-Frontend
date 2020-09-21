@@ -1,0 +1,43 @@
+<br>
+<mat-card class="card-width">
+    <mat-card-title><span class="font">Subjects</span></mat-card-title>
+    <br>
+    <mat-card-content>
+        <mat-card *ngFor="let subject of subjects" class="spacing-top shadow-effect">
+            <mat-card-content>
+                <div fxLayout fxLayoutAlign="space-between center" class="spacing-top">
+                    <span class="font">{{subject.subject}}</span>
+                    <span><button class="spacing-right" 
+                        mat-flat-button 
+                        height="10" 
+                        [ngClass]="(subject.status=='unchecked')?'yellow-button':'green-button'" 
+                        >{{subject.status}}</button></span>
+                </div>
+                <div fxLayout fxLayoutAlign="start center" class="spacing-top">
+                    <span class="font-color">Teacher's Name:</span>
+                    <span class="spacing-left">
+                        <span class="font-color">No of assignments:</span>&nbsp;
+                        <span class="content">{{subject.noOfAssignment}}</span>
+                    </span>
+                    <span class="spacing-left">
+                        <span class="font-color">Late submissions:</span>&nbsp; 
+                        <span class="content">{{subject.lateSubmission}}</span>
+                    </span>
+                    <span class="spacing-left">
+                        <span class="font-color">Average marks:</span>&nbsp; 
+                        <span class="content">{{subject.averageMarks}}%</span>
+                    </span>
+                </div>
+                <div fxLayout fxLayoutAlign="space-between center">
+                    <span>
+                        <span class="content">{{subject.teacherName}}</span>
+                    </span>
+                    <span><button mat-stroked-button
+                         class="view-button" 
+                         routerLink="subject-submission"
+                         ><b>view submission</b></button></span>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </mat-card-content>
+</mat-card>

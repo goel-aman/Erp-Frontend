@@ -1,0 +1,35 @@
+table {
+  width: 100%;
+}
+mat-card-actions {
+  width: 100%;
+  text-align: center;
+}
+.attendance-status {
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 2px 0;
+  width: 79px;
+  height: 30px;
+  text-align: center;
+  display: inline-block;
+  color: white;
+  user-select: none;
+  line-height: 2em;
+}
+.attendance-status.statu-P {
+  background-color: #2ed47a;
+}
+.attendance-status.status-A{
+  background-color: #f7685b;
+}
+.attendance-status.status-L {
+  background-color: #ffb946;
+}
+td .mat-form-field{
+  margin: 10px;
+}
+
+.attendance-table-actions{
+  text-align:  center;
+}

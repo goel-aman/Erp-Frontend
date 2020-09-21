@@ -1,0 +1,19 @@
+<mat-tab-group class="leave-tab-header">
+    <mat-tab label="Leave Dashboard"> 
+        <div fxLayout fxLayoutAlign="space-between start" class="leave-tab-content">
+            <div fxFlex="70">
+                <app-school-vacation-calender></app-school-vacation-calender>
+            </div>
+            <div fxFlex="30" fxLayout="column">
+                <app-leave-history></app-leave-history>
+                <app-leave-record></app-leave-record>
+            </div>
+            
+        </div>
+    </mat-tab>
+    <mat-tab label="Apply for leave"> 
+        <div class="leave-tab-content">
+            <app-leave-application></app-leave-application> 
+        </div>
+    </mat-tab>
+</mat-tab-group>

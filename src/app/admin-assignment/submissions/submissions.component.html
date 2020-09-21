@@ -1,0 +1,44 @@
+<br>
+<mat-card class="column card-spacing card">
+    <mat-card-title class="heading">My classes</mat-card-title>
+    <mat-card-content>
+        <mat-card class="column" *ngFor="let subject of subjects" class="shadow-effect spacing-top" >
+            <div fxLayout fxLayoutGap="30px" fxLayoutAlign="start start">
+                <span>
+                    <span class="font">Subject:</span> &nbsp;
+                    <span class="text">{{ subject.subject }}</span>
+                </span>
+                <span>
+                    <span class="font">classes:</span> &nbsp;
+                    <span class="text">{{ subject.classes }}</span>
+                </span>
+                <span>
+                    <span class="text">{{ subject.unchecked }}</span> &nbsp;&nbsp; 
+                    <span class="font">unchecked assignments</span>
+                </span>
+            </div>
+            <div class="row" fxLayoutAlign="space-between end" >
+                <span 
+                (click)="displayHidden(subject)" 
+                class="text">Latest assignments <mat-icon *ngIf="!display">keyboard_arrow_down</mat-icon>
+                <mat-icon *ngIf="display">keyboard_arrow_up</mat-icon>
+                </span>
+                <span>
+                    <button mat-stroked-button 
+                    class="view-assignment-button"
+                    routerLink="view-all-assignment" 
+                    [state]="{data: [subject,displayedColumns]}"><span class="view-all-button">View all assignments</span>
+                    </button>
+                </span>
+            </div>
+            <div *ngIf="subject == displaycontent && display">
+                <br>
+                <app-assignment-table 
+                [dataSource]="subject.latestAssignment" 
+                [displayedColumns]="displayedColumns">
+                </app-assignment-table>
+            </div>
+        </mat-card>
+    </mat-card-content>
+</mat-card>
+

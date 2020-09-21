@@ -1,0 +1,51 @@
+<mat-tab-group class="tab-header">
+  <mat-tab label="Attendance Dashboard">
+    <div fxLayout="column" fxLayoutAlign="space-between" class="tab-content">
+      <div fxLayout fxLayoutAlign="start">
+        <app-pie-attendance [studentId]="studentId"></app-pie-attendance>
+        <app-class-attendance [studentId]="studentId"></app-class-attendance>
+      </div>
+      <div fxLayout fxLayoutAlign="start">
+        <app-calender-attendance [studentId]="studentId"></app-calender-attendance>
+        <leave-record></leave-record>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Apply for leave">
+    <div class="tab-content">
+      <app-leave-application ></app-leave-application>
+    </div>
+  </mat-tab>
+  <!-- <mat-tab label="Apply for leave">
+    <div class="tab-content">
+      <app-leave-application></app-leave-application>
+    </div>
+  </mat-tab> -->
+  <mat-tab label="Mark Attendance">
+    <div class="tab-content">
+      <ng-container
+      *ngIf="isDisplayStudent; then studentAttendance; else teacherAttendance"
+    >
+    </ng-container>
+    <ng-template #studentAttendance>
+      <app-student-attendance-mark-admin></app-student-attendance-mark-admin></ng-template>
+    <ng-template #teacherAttendance>
+      <app-teacher-attendance-mark-admin></app-teacher-attendance-mark-admin>
+    </ng-template>
+    </div>
+  </mat-tab>
+  <mat-tab label="Attendance Report">
+    <div class="tab-content">
+      <ng-container
+        *ngIf="isDisplayStudent; then studentReport; else teacherReport"
+      >
+      </ng-container>
+      <ng-template #studentReport>
+        <app-attendance-report-student></app-attendance-report-student>
+      </ng-template>
+      <ng-template #teacherReport>
+        <app-attendance-report-teacher></app-attendance-report-teacher>
+      </ng-template>
+    </div>
+  </mat-tab>
+</mat-tab-group>

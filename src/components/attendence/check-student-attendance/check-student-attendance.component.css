@@ -1,0 +1,150 @@
+/* Classes are in alphabetically Sorted order */
+
+.attendance-value {
+  margin-left: 10px;
+}
+/* 
+.table-container-check-student-attendance {
+    height: 200px;
+    overflow: auto;
+  }
+  
+table {
+   width: 100%;
+   font-family: Poppins;
+   font-size: 10px;
+}
+.mat-card-check-student-attendance{
+    margin: 16px;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    font-family: Poppins;
+}
+.check-student-attendance-title{
+    font-weight: 600;
+    font-family: Poppins;
+    font-size: 15px;
+}
+.mat-cell{
+    border-bottom-style: none;
+    padding-left: 0px !important;
+  }
+.mat-header-cell{
+   border-bottom-style: none;
+   padding-left: 0px !important;
+}
+.attendance-label{
+    font-size: 12px;
+    color: darkgray;
+}
+.attendance-value{} */
+
+.attendance-label {
+  color: #4C5862;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 19px;
+  letter-spacing: 0.01em;
+  opacity: 0.5;
+}
+
+.check-student-attendance-title {
+  color: #192A3E;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  letter-spacing: 0.01em;
+}
+
+.dark-font {
+  color: #323C47;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  letter-spacing: 0.01em;
+}
+
+.input-name {
+  border: none;
+  border-color: transparent;
+  box-shadow: none !important;
+  position: relative;
+  text-align: center;
+}
+
+.input-shadow-effect {
+  background: #FFFFFF;
+  border: 0.4px solid #C4C4C4;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.14);
+  border-radius: 4px;
+  height: 46px;
+  min-width: 241px;
+  padding: 0px 0px 0px 8px;
+}
+
+.label {
+  color: #4C5862;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 19px;
+  letter-spacing: 0.01em;
+  opacity: 0.5;
+}
+
+.mat-card-check-student-attendance {
+  background: #FFFFFF;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  margin: 2%;
+}
+
+.mat-cell {
+  border-bottom-style: none;
+  padding-left: 0px !important;
+}
+
+.mat-header-cell {
+  border-bottom-style: none;
+  padding-left: 0px !important;
+}
+
+.student-name-input {
+  font-size: 12px;
+  height: -5px;
+  margin-left: 10px;
+}
+
+.table-container-check-student-attendance {
+  height: 200px;
+  overflow: auto;
+}
+
+table {
+  font-family: Poppins;
+  font-size: 10px;
+  width: 100%;
+}
+
+.table-heading {
+  color: #334D6E;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 19px;
+  letter-spacing: 0.01em;
+  opacity: 0.5;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}

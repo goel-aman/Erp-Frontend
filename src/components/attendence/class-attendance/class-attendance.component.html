@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-title>Class Attendance</mat-card-title>
+  <mat-card-content>
+    <mat-spinner *ngIf="!(lineChartData.length == 3)" [diameter]="60"></mat-spinner>
+    <ng-container *ngIf="lineChartData.length == 3">
+      <canvas id="attendance-line-chart"
+        height="240px" width="540px"
+        baseChart
+        [datasets]="lineChartData"
+        [labels]="lineChartLabels"
+        [options]="lineChartOptions"
+        [colors]="lineChartColors"
+        [legend]="lineChartLegend"
+        [chartType]="lineChartType"
+        [plugins]="lineChartPlugins">
+      </canvas>
+    </ng-container>
+  </mat-card-content>
+</mat-card>

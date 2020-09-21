@@ -1,0 +1,138 @@
+<br>
+<mat-card>
+  <mat-card-title>
+    <span routerLink="/student-assignment" class="submission">
+      <mat-icon>navigate_before</mat-icon>
+      <span class="position-align">Submissions</span>
+    </span>
+  </mat-card-title>
+  <mat-card-content>
+    <br>
+    <div class="spacing-top">
+      <span>
+        <span class="content">Subject:</span>&nbsp;&nbsp;
+        <span class="subject">{{subjectAssignment.subject}}</span>
+      </span>
+    </div>
+    <br>
+    <div class="spacing-top">
+      <span>
+        <span class="content">Teacher's name: </span>&nbsp;
+        <span class="font-black">{{subjectAssignment.teacherName}}</span>
+      </span>
+      <span>
+        <span class="content left-spacing">No of assignments: </span>&nbsp;
+        <span class="font-black">{{subjectAssignment.noOfAssignments}}</span>
+      </span>
+      <span>
+        <span class="content left-spacing">Late submissions: </span>&nbsp;
+        <span class="font-black">{{subjectAssignment.lateSubmissions}}</span>
+      </span>
+      <span>
+        <span class="content left-spacing">Average marks: </span>&nbsp;
+        <span class="font-black">{{subjectAssignment.averageMarks}}%</span>
+      </span>
+    </div>
+    <br>
+    <div>
+      <span class="filter-by">Filter By</span>
+      <br><br>
+      <div fxLayout fxLayoutAlign="start start">
+        <div class="input-box-shadow">
+          <mat-form-field>
+            <span class="white-color">Month</span><input
+              matInput
+              class="input-box-border"
+              style="width: 100px;"
+              (keyup)="applyFilter($event)"
+              #input>
+          </mat-form-field>
+        </div>
+        <button mat-stroked-button class="search-button">Search</button>
+      </div>
+      <table multiTemplateDataRows mat-table [dataSource]="dataSource"
+        class="mat-elevation-z8">
+
+        <ng-container matColumnDef="topic">
+          <th mat-header-cell *matHeaderCellDef>
+            <span class="white-color-heading">Topic</span>
+          </th>
+          <td mat-cell *matCellDef="let assignment" class="remarks">
+            <span class="topic">{{assignment.topic}}</span>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="dateOfAssigning">
+          <th mat-header-cell *matHeaderCellDef>
+            <span class="white-color-heading">Date Of Assigning</span>
+          </th>
+          <td mat-cell *matCellDef="let assignment" class="remarks">
+            <span class="white-color-content">{{assignment.dateOfAssigning}}</span>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="deadline">
+          <th mat-header-cell *matHeaderCellDef>
+            <span class="white-color-heading">Deadline</span>
+          </th>
+          <td mat-cell *matCellDef="let assignment" class="remarks">
+            <span class="white-color-content">{{assignment.deadline}}</span>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="dateOfSubmission">
+          <th mat-header-cell *matHeaderCellDef>
+            <span class="white-color-heading">Date Of Submission</span>
+          </th>
+          <td mat-cell *matCellDef="let assignment" class="remarks">
+            <span class="white-color-content">{{assignment.dateOfSubmission}}</span>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="marks">
+          <th mat-header-cell *matHeaderCellDef>
+            <span class="white-color-heading">Marks</span>
+          </th>
+          <td mat-cell *matCellDef="let assignment" class="remarks"> <button
+              mat-flat-button
+              height="10"
+              [ngClass]="(assignment.marks=='unchecked')?'yellow-button':'topic-style'">{{assignment.marks}}</button>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="percentage">
+          <th mat-header-cell *matHeaderCellDef>
+            <span class="white-color-heading">Percentage</span>
+          </th>
+          <td mat-cell *matCellDef="let assignment" class="remarks">
+            <span class="white-color-content">{{assignment.percentage}}%</span>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="view">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let assignment" class="remarks"> 
+
+            <button mat-raised-button class="blue-color">
+              <span class="view-font">View</span>
+            </button>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="expandedDetail">
+          <td mat-cell *matCellDef="let assignment"
+            [attr.colspan]="displayedColumns.length"
+            [ngClass]="(assignment.remarks)?'':'remove-td'">
+            <div *ngIf="assignment.remarks != ''" class="spacing-left">
+              {{assignment.remarks}}
+            </div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr class="expandable-col-height" mat-row *matRowDef="let row; columns: ['expandedDetail']"></tr>
+      </table>
+    </div>
+  </mat-card-content>
+</mat-card>

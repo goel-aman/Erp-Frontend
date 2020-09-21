@@ -1,0 +1,138 @@
+<div fxLayout fxLayoutAlign="space-between none">
+    <div fxFlex="2"></div>
+    <div fxFlex="52">
+        <mat-card class="mat-card-leave-application">
+            <form fxLayout="column" [formGroup]="leaveApplicationForm"
+                (ngSubmit)="onSubmit()">
+                <div class="leave-application-card-heading">Leave application</div><br>
+                <div fxLayout fxLayoutAlign="space-between center">
+                    <div fxLayout fxFlex="50" fxLayoutAlign="start center">
+                        <label class="label">Name:</label>
+                        <span class="value-left font">{{leaveApplicationForm.value.name}}</span>
+                    </div>
+                    <div *ngIf="loginUserType === 'Guardian' || loginUserType === 'student'" 
+                        fxLayout 
+                        fxFlex="50" 
+                        fxLayoutAlign="start center">
+                        <label class="label">Class:</label>
+                        <span class="value-right font">4-C</span>
+                    </div>
+                    <div *ngIf="loginUserType === 'Teacher'" fxLayout fxFlex="50" fxLayoutAlign="start center">
+                      <label class="label">Id No:</label>
+                      <span class="value-right font">12345</span>
+                    </div>
+                </div>
+                <div fxLayout fxLayout.lt-md="column"
+                    fxLayoutAlign.lt-md="center start"
+                    fxLayoutAlign="space-between center"
+                    class="less-top-spacing">
+                    <div fxLayout fxFlex="50" fxLayoutAlign="start center">
+                        <div class="shadow-effect">
+                            <label class="label bottom-spacing">From:</label>
+                            <mat-form-field appearance="outline"
+                                class="date-picker-left">
+                                <input matInput class="less-bottom-spacing"
+                                    [matDatepicker]="pickerFrom"
+                                    formControlName="from"
+                                    (dateChange)="onKeyUpfromdate('change', $event)"
+                                    (click)="pickerFrom.open()">
+                                <mat-datepicker-toggle matSuffix
+                                    [for]="pickerFrom" class="calendar">
+                                </mat-datepicker-toggle>
+                                <mat-datepicker #pickerFrom></mat-datepicker>
+                                <mat-error *ngIf="hasError('from', 'required')">From date is required</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div fxLayout fxFlex="50" fxLayoutAlign="start center">
+                        <div class="shadow-effect">
+                            <label class="label bottom-spacing">To:</label>
+                            <mat-form-field appearance="outline"
+                                class="date-picker-right">
+                                <input matInput
+                                    class="less-bottom-spacing"
+                                    [matDatepicker]="pickerTo"
+                                    formControlName="to"
+                                    (click)="pickerTo.open()"
+                                    (dateChange)="onKeyUptoDate('change', $event)">
+                                <mat-datepicker-toggle matSuffix
+                                    [for]="pickerTo" class="calendar">
+                                </mat-datepicker-toggle>
+                                <mat-datepicker #pickerTo></mat-datepicker>
+                                <mat-error *ngIf="hasError('to', 'required')">To date is required</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+
+                <div fxLayout fxLayoutAlign="end center" class="days-no-spacing">
+                    <span class="label">No. of days :</span>
+                    <input type="text" formControlName="noOfDays" readonly class="no-of-days font">
+                </div>
+
+                <div fxLayout fxFlex="50" fxLayoutAlign="start center">
+                    <span class="label">Type of leave:</span>
+                    <mat-form-field appearance="outline" class="dropdown-style shadow-effect left-spacing">
+                      <mat-select formControlName="typeOfLeave" class="less-bottom-spacing">
+                        <mat-option matInput *ngFor="let leave of typeOfLeaves" [value]="leave">
+                          {{leave}}
+                        </mat-option>
+                      </mat-select>
+                      <mat-error *ngIf="hasError('typeOfLeave', 'required')">Type of leave is required</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout fxFlex="50" fxLayoutAlign="start center" class="less-top-spacing">
+                    <mat-icon class="icon-color">attach_file</mat-icon>
+                    <span class="attachment-link">Click here to attach required
+                        document</span>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline" style="width:100%">
+                        <textarea matInput 
+                                  formControlName="reasonForLeave"
+                                  class="text-area-leave-application top-spacing"
+                                  placeholder="Please provide the reason for the leave">
+                        </textarea>
+                        <mat-error *ngIf="hasError('reasonForLeave','required')">Reason for leave is required</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout fxLayoutAlign="space-evenly center"
+                    class="top-spacing">
+                    <div fxFLex="50">
+                        <button mat-flat-button
+                                class="cancel-button"
+                                (click)="onCancel()">
+                          Cancel
+                        </button>
+                    </div>
+                    <div fxFlex="50">
+                        <button mat-flat-button
+                            class="submit-button"
+                            type="submit"
+                            [disabled]="!leaveApplicationForm.valid">
+                          <span class="button-submit">Submit</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div fxLayout="column" class="top-spacing">
+                    <span class="note">Note:</span>
+                    <br>
+                    <span class="label">
+                      1. Your transportation facilities will automatically be cancelled when your leave gets approved
+                    </span>
+                    <span class="label">
+                      2. Cancelling an approved leave will automatically re-enable transportation facility
+                    </span>
+                </div>
+            </form>
+        </mat-card>
+    </div>
+    <div fxFlex="2"></div>
+    <div fxFlex="43">
+        <app-leave-application-status [events]="eventsSubject.asObservable()"></app-leave-application-status>
+    </div>
+    <div fxFlex="1"></div>
+</div>

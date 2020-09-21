@@ -1,0 +1,58 @@
+table.assignment-report-table {
+  border: solid gray 0.5px;
+  border-collapse: collapse;
+}
+table.assignment-report-table thead {
+  background-color: lightgray;
+}
+table.assignment-report-table thead th {
+  color: #232326;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: left;
+  border: solid gray 0.5px;
+  padding: 2px;
+}
+
+/* table.assignment-report-table thead tr th:not(:last-of-type) {
+  border-right: solid gray 0.5px;
+} */
+
+table.assignment-report-table tbody td {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 18px;
+  border: solid gray 0.5px;
+  padding: 2px;
+}
+.report-status {
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+
+  text-align: center;
+  letter-spacing: 0.02em;
+  border-radius: 4px;
+  width: 100%;
+  display: inline-block;
+}
+.report-status.UnChecked {
+  background: #2ed47a;
+}
+.report-status.Checked {
+  background: #ffb946;
+}
+label{
+color:gray
+}
+/* table.assignment-report-table tbody tr:not(:last-of-type) td {
+  border-bottom: solid gray 0.5px;
+}
+
+table.assignment-report-table tbody tr td:not(:last-of-type) {
+  border-right: solid gray 0.5px;
+} */

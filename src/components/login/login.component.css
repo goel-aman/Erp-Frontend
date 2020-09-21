@@ -1,0 +1,28 @@
+.mat-card-login{
+  width: 500px;
+  height: 450px;
+  margin: 47px;
+  border-radius: 5px;
+  font-family: 'Poppins';
+}
+.login-page-card-heading{
+  font-size: 15px;
+  font-weight: 700;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-family: 'Poppins';
+}
+.login-button{
+  background-color: dodgerblue;
+  color:white;
+  width: 200px;
+  margin-top: 40px;
+}
+.forgot-password-button{
+  color: dodgerblue;
+  font-family: 'Poppins';
+  font-size: 10px;
+  font-weight: 700;
+  margin-top: 10px;
+}

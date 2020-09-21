@@ -1,0 +1,18 @@
+<mat-card >
+  <div fxFlex="15">
+    <mat-label>Date:</mat-label>
+    {{ date | date }}
+  </div>
+  <div fxFlex="15">
+    <mat-label>Class </mat-label>
+    {{ class.standard }}-{{ class.section }}
+  </div>
+
+</mat-card>
+<div>
+  <app-student-attendance-mark-table
+    [displayMode]="'teacher'"
+    [class]="class"
+    [date]="date"
+  ></app-student-attendance-mark-table>
+</div>

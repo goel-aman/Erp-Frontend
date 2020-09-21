@@ -1,0 +1,26 @@
+.mat-card {
+  height: 332px;
+  width: 640px;
+  margin: 16px;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+.mat-card-content {
+  height: 80%;
+  width: 80%;
+}
+
+#attendance-line-chart {
+  margin: 24px 0 0 40px;
+}
+
+.mat-card-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.mat-spinner {
+  margin-left: 35%;
+  margin-top: 20% !important;
+}

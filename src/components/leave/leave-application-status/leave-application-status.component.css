@@ -1,0 +1,105 @@
+/* Classes are in alphabetically sorted order */
+.acknowledge-status-negative {
+    background: #F7685B;
+    color: #fff;
+    font-size: 12px;
+    margin-left: 10px;
+    min-width: 85px;
+}
+
+.acknowledge-status-waiting {
+    background: #FFB946;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    margin-left: 10px;
+    min-width: 133px;
+    padding: 2px;
+    text-align: center;
+}
+
+.acknowledge-status-positive {
+    background: #2ED47A;
+    color: #fff;
+    font-size: 12px;
+    margin-left: 18px;
+    min-width: 85px;
+}
+
+.card-mat {
+    background: #FFFFFF;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+    margin: 1%;
+}
+
+.card-label {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.label-status {
+    color: #90A0B7;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+}
+
+.mat-flat-button {
+    line-height: 20px;
+}
+
+.mat-inner-card-leave-application-status {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.14);
+    border-radius: 4px;
+    font-family: 'Poppins';
+    margin: 2%;
+}
+
+.status-label {
+    color: #4C5862;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    opacity: 0.5;
+}
+
+.status-value {
+    color: #4C5862;
+    margin-left: 10px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+}
+
+.status-cancel-button {
+    background: none;
+    border: none;
+    color: #109CF1;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    text-align: center;
+}
+
+.top-spacing {
+    margin-top: 2%;
+}

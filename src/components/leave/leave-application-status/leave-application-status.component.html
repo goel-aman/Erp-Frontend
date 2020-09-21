@@ -1,0 +1,41 @@
+<mat-card fxFlex class="card-mat">
+  <span class="card-label">Application Status</span>
+  <div *ngFor="let card of applicationStatusCard" fxLayout fxLayout.lt-md="column">
+    <mat-card fxFlex fxLayout.lt-md="column"
+      class="mat-inner-card-leave-application-status">
+      <div fxLayout>
+        <div fxFlex="60" fxLayoutAlign="start center">
+          <span class="label-status">{{card.applicationAcknowledgementStatus}}</span>
+          <button mat-flat-button height="10"
+            [ngClass]="{'acknowledge-status-positive': card.status == 'Approved' ,
+             'acknowledge-status-negative': card.status == 'Rejected',
+             'acknowledge-status-waiting': card.status == 'Waiting for approval'}">
+            {{card.status}}</button>
+        </div>
+        <div fxFlex="40" fxLayoutAlign="end center">
+          <span class="status-label">No. of days</span>
+          <span class="status-value">{{card.no_of_days}}</span>
+        </div>
+      </div>
+      <div class="top-spacing" fxLayout>
+        <div fxFlex="50" fxLayoutAlign="start center">
+          <span class="status-label">From:</span>
+          <span class="status-value">{{card.start_date}}</span>
+        </div>
+        <div fxFlex="50" fxLayoutAlign="end center">
+          <span class="status-label">Type of leave:</span>
+          <span class="status-value">{{card.type_of_leave}}</span>
+        </div>
+      </div>
+      <div class="top-spacing" fxLayout>
+        <div fxFlex="50" fxLayoutAlign="start center">
+          <span class="status-label">To:</span>
+          <span class="status-value">{{card.end_date}}</span>
+        </div>
+        <div fxFlex="50" fxLayoutAlign="end center" *ngIf="card.status != 'Rejected'">
+          <button class="status-cancel-button"> Cancel Leave</button>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</mat-card>

@@ -1,0 +1,39 @@
+.fill-remaining-space {
+    /* This fills the remaining space, by using flexbox.
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+
+.icons-align {
+    display: inline-flex;
+    vertical-align: text-top;
+    color: #C2CFE0;
+}
+
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+.example-events {
+  width: 300px;
+  height: 200px;
+  overflow: auto;
+  border: 1px solid #555;
+}
+
+.app-header {
+  color: #109CF1;
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.nav-bar {
+  background-color: #fff;
+  border: 1px solid #EBEFF2;
+  height: 48px;
+}

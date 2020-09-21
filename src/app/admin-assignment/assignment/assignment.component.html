@@ -1,0 +1,218 @@
+<mat-tab-group class="tab-header" [(selectedIndex)]="selectedIndex"  class="mat-group">
+    <mat-tab label="Dashboard">
+    </mat-tab>
+    <mat-tab label="Upload assignments">
+        <mat-grid-list [cols]="breakpoint" [rowHeight]="150 * lengthOfCard" class="tab-content">
+            <mat-grid-tile>
+                <div fxLayout="column" fxLayoutAlign="space-evenly center">
+                    <mat-card class="top-alignment card-shadow card-width">
+                        <mat-card-title class="heading">Assignment upload</mat-card-title>
+                        <br>
+                        <mat-card-content class="card-left-spacing">
+                            <form (ngSubmit)="onSubmit()">
+                                <div>
+                                        <div  class="input-box-shadow div-height">
+                                            <label for="class-label" class="input-box-font">Class</label>
+                                            <input
+                                                type="text"
+                                                class="input-box-border input-box-height"
+                                                id="class-label"
+                                                name="class"
+                                                [(ngModel)]="assignmentInput.class">
+                                        </div>
+                                        <div  class="input-box-shadow spacing-left div-height">
+                                            <label for="section-label" class="input-box-font">Section</label>
+                                            <input
+                                                type="text"
+                                                class="input-box-border input-box-height"
+                                                id="section-label"
+                                                name="section"
+                                                [(ngModel)]="assignmentInput.section">
+                                        </div>
+                                        <div  class="input-box-shadow spacing-left div-height aligning-deadline-div">
+                                            <mat-label class="input-box-font aligning-deadline-label">Deadline</mat-label>
+                                            <mat-form-field class="deadline-position">
+                                                <input
+                                                    matInput
+                                                    class="input-box-border"
+                                                    name="date"
+                                                    [(ngModel)]="assignmentInput.date"
+                                                    [matDatepicker]="picker">
+                                                <mat-datepicker-toggle
+                                                    matSuffix
+                                                    [for]="picker"
+                                                    class="calendar-icon-color">
+                                                </mat-datepicker-toggle>
+                                                <mat-datepicker #picker ></mat-datepicker>
+                                            </mat-form-field>
+                                        </div>
+                                </div>
+                                <div>
+                                    <div class="input-box-shadow div-height subject">
+                                        <label for="subject-label" class="input-box-font">Subject</label>
+                                        <input
+                                            type="text"
+                                            class="input-box-border input-box-height"
+                                            id="subject-label"
+                                            name="subject"
+                                            [(ngModel)]="assignmentInput.subject">
+                                    </div>
+                                    <div class="input-box-shadow spacing-left div-height topic">
+                                        <label for="topic-label" class="input-box-font">Topic</label>
+                                        <input
+                                            type="text"
+                                            class="input-box-border input-box-height"
+                                            id="topic-label"
+                                            name="topic"
+                                            [(ngModel)]="assignmentInput.topic">
+                                    </div>
+                                </div>
+                                <div *ngFor="let k of numOfUpload">
+                                    <div class="input-box-shadow type-div">
+                                        <mat-label class="input-box-font type-label">Type</mat-label>
+                                        <mat-form-field>
+                                            <mat-select
+                                                class="input-box-border"
+                                                id="type"
+                                                style="position:relative;bottom: 4px;"
+                                                name="type1"
+                                                [(ngModel)]='assignmentInput["type" + k]'>
+                                                <mat-option
+                                                    *ngFor="let assignmentType of assignmentTypes"
+                                                    [value]="assignmentType.value">
+                                                    {{assignmentType.value}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="file-upload-alignment spacing-left">
+                                        <div class="file-upload">
+                                            <label for="file-input">
+                                                <mat-icon>attach_file</mat-icon>
+                                                <span class="color-link"> Upload the required file </span>
+                                            </label>
+                                            <input
+                                                *ngIf='assignmentInput["type" + k] =="Manual" ; else nonManualInput'
+                                                id="file-input"
+                                                type="file"
+                                                accept="application/pdf,application/msword,.doc,.docx"
+                                                (change)="onFileSelected($event,k)"
+                                                />
+                                                <ng-template #nonManualInput>
+                                            <input
+                                                id="file-input"
+                                                type="file"
+                                                accept=".xls,.xlsx"
+                                                (change)="onFileSelected($event,k)"
+                                                /></ng-template>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p></p>
+                                <div class="spacing-top">
+                                    <div class="input-box-shadow div-height">
+                                        <label for="marks-label" class="input-box-font">Marks</label>
+                                        <input
+                                            type="text"
+                                            class="input-box-border input-box-height"
+                                            id="marks-label"
+                                            name="marks"
+                                            [(ngModel)]="assignmentInput.marks">
+                                    </div>
+                                </div>
+                                <p></p>
+                                <a (click)="addAssignment()">
+                                    <div fxLayout="row" fxLayoutAlign="center center">
+                                        <mat-icon>add_circle_outline</mat-icon>&nbsp;&nbsp;
+                                    <span>Click here to add more assignments</span></div></a>
+                                <div class="spacing-top">
+                                    <div class="input-box-shadow remarksx">
+                                        <mat-form-field class="remark-input">
+                                            <textarea
+                                                matInput
+                                                class="remarksx"
+                                                placeholder="Remarks if any"
+                                                name="remarks"
+                                                [(ngModel)]="assignmentInput.remarks">
+                                            </textarea>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="spacing-top" >
+                                    <div fxLayout fxLayoutAlign="space-evenly center">
+                                    <button mat-stroked-button class="cancel-button">Cancel</button>
+                                    <button
+                                        type="submit"
+                                        mat-raised-button
+                                        class="upload-button"
+                                        color="primary"><span class="upload-button-text">Upload</span>
+                                    </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-card class="top-alignment card-width card-shadow" >
+                    <mat-card-title class="heading-active-assignment">Active Assignments</mat-card-title>
+                    <br>
+                    <mat-card-content *ngFor="let activeAssignment of activeAssignments">
+                        <div fxLayout="column" fxLayoutAlign="space-around center">
+                            <mat-card class="shadow-effect sub-card-width">
+                                <mat-card-content>
+                                    <div>
+                                        <div fxLayout
+                                            fxLayoutAlign="space-between center">
+                                            <span class="normal-font">{{activeAssignment.subject}}</span>
+                                            <span class="align-class">
+                                                <span class="font-white">{{activeAssignment.class}}</span>
+                                            </span>
+                                            <span>
+                                                <span class="font-white">Type:</span>
+                                                <span class="normal-font"> {{activeAssignment.type }}</span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div fxLayout
+                                        fxLayoutAlign="space-between center" class="spacing-top-active-assignment">
+                                        <span class="normal-font">{{ activeAssignment.topic }}</span>
+                                        <span>
+                                            <button mat-raised-button class="view-button">View</button>
+                                        </span>
+                                    </div>
+
+                                    <div fxLayout
+                                        fxLayoutAlign="space-between center" class="spacing-top-active-assignment">
+                                        <span>
+                                            <span class="font-white">deadline:</span>
+                                            <span class="normal-font"> {{ activeAssignment.deadline }}</span>
+                                        </span>
+                                        <span>
+                                            <button class="delete-button">Delete Assignment</button></span>
+                                    </div>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-tab>
+
+    <mat-tab label="Submissions">
+    <div class="tab-content">
+        <router-outlet></router-outlet>
+        <app-submissions *ngIf="route.url == '/assignment'"></app-submissions>
+    </div>
+    </mat-tab>
+    <mat-tab label="Report">
+      <div class="tab-content">
+          <app-assignment-report *ngIf="route.url == '/assignment'"></app-assignment-report>
+      </div>
+      </mat-tab>
+
+</mat-tab-group>
+

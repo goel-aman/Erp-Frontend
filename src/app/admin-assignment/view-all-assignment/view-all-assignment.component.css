@@ -1,0 +1,57 @@
+/* Classes are in alphabetically sorted order */
+
+.font-assignment {
+    color: #4C5862;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+}
+
+.font {
+    color: #4C5862;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    opacity: 0.5;
+}
+
+.heading {
+    bottom: 7px;
+    color: #192A3E;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 1000;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    position: relative;
+}
+
+mat-card {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.14);
+    border-radius: 4px;
+    left: 1%;
+    position: relative;
+    width: 90%;
+}
+
+.spacing-left {
+    margin-left: 4%;
+}
+
+.text {
+    color: #4C5862;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+}

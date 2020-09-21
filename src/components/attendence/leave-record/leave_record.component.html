@@ -1,0 +1,66 @@
+<mat-card fxLayout="column"
+  fxLayoutAlign="space-between stretch"
+  fxLayoutGap="12px"
+  class="leave-records-card">
+  <mat-card-title *ngIf="!isAdmin">Leave Records</mat-card-title>
+  <mat-card-title *ngIf="isAdmin">Today's absentees</mat-card-title>
+  <mat-spinner *ngIf="!attendanceRecords.length && !todayAbsenteesRecord.length" [diameter]="60"></mat-spinner>
+  <mat-card *ngFor="let attendanceRecord of attendanceRecords" class="shadow-effect">
+    <mat-card-content fxLayout
+      fxLayoutAlign="space-between center">
+      <div fxFlex="40">
+        {{attendanceRecord.attendance_date | date: 'MMMM d, y'}}, <span
+          class="attendance-status">{{attendanceRecord.status}}</span>
+      </div>
+      <div fxFlex="30">
+        {{attendanceRecord.leave_type}}
+      </div>
+      <div fxFlex="30">
+        <button mat-flat-button
+                (click)="acknowledgeLeave(attendanceRecord)" 
+          [ngClass]="{'acknowledge-status-positive':
+          attendanceRecord.parent_acknowledged == 'Acknowledged' ,
+          'acknowledge-status-negative': attendanceRecord.parent_acknowledged
+          =='Unacknowledged'}">
+          {{attendanceRecord.parent_acknowledged}}
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngFor="let attendanceRecord of todayAbsenteesRecord" class="shadow-effect">
+    <mat-card-content fxLayout fxLayoutAlign="space-between center">
+      <div class="name">
+        {{attendanceRecord.teacher_name}}
+      </div>
+      <div class="status">
+        {{attendanceRecord.attendance_status}}
+      </div>
+      <div>
+        <button
+          mat-flat-button
+          [ngClass]="{'acknowledge-status-positive': attendanceRecord.approval_status == 'Approved',
+          'acknowledge-status-negative': attendanceRecord.approval_status == 'Unapproved'}">
+          {{attendanceRecord.approval_status}}
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <mat-card *ngFor="let attendanceRecord of attendanceRecordForTeacherLogin">
+    <mat-card-content fxLayout
+                      fxLayoutAlign="space-between center">
+      <div fxFlex="40">
+        {{attendanceRecord.student_name}}, <span class="attendance-status">{{attendanceRecord.status}}</span>
+      </div>
+      <div fxFlex="30">
+        Guardian {{attendanceRecord.parent_notified}}
+      </div>
+      <div fxFlex="30">
+        <button mat-flat-button
+                [ngClass]="{'acknowledge-status-positive': attendanceRecord.parent_acknowledged == 'Acknowledged' , 'acknowledge-status-negative': attendanceRecord.parent_acknowledged == 'Unacknowledged'}">
+                {{attendanceRecord.parent_acknowledged}}
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</mat-card>
